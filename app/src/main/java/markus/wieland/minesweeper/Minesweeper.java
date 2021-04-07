@@ -20,6 +20,8 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
         this.minesweeperGameBoard = minesweeperGameBoard;
         minesweeperGameBoard.loadGameState(minesweeperGameState);
         this.seconds = minesweeperGameState.getSeconds();
+        minesweeperGameBoard.updateTime(seconds);
+        minesweeperGameBoard.updateRemainingBombs();
         this.difficulty = minesweeperGameState.getDifficulty();
         minesweeperGameBoard.setGameBoardInteractionListener(this);
         timer = new CountDownTimer(1000, 1000) {

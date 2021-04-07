@@ -1,14 +1,13 @@
 package markus.wieland.minesweeper.persistence;
 
 import markus.wieland.games.elements.Coordinate;
-import markus.wieland.games.game.GameBoardField;
 import markus.wieland.games.game.grid.GridGameStateField;
 import markus.wieland.minesweeper.view.MinesweeperCellView;
 
 public class MinesweeperGameStateField extends GridGameStateField {
 
-    private boolean isUncovered;
-    private boolean isMarkedAsSafe;
+    private final boolean isUncovered;
+    private final boolean isMarkedAsSafe;
     private int value;
 
     public MinesweeperGameStateField(Coordinate coordinate, boolean isUncovered, boolean isMarkedAsSafe, int value) {
@@ -36,14 +35,6 @@ public class MinesweeperGameStateField extends GridGameStateField {
 
     public boolean isBomb() {
         return MinesweeperCellView.BOMB == value;
-    }
-
-    public void setUncovered(boolean uncovered) {
-        isUncovered = uncovered;
-    }
-
-    public void setMarkedAsSafe(boolean markedAsSafe) {
-        isMarkedAsSafe = markedAsSafe;
     }
 
     public void setValue(int value) {

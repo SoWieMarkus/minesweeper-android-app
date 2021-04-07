@@ -5,7 +5,6 @@ import markus.wieland.games.game.GameConfiguration;
 import markus.wieland.games.game.Highscore;
 import markus.wieland.games.persistence.GameGenerator;
 import markus.wieland.games.persistence.GameSaver;
-import markus.wieland.games.screen.interact_listener.EndScreenInteractListener;
 import markus.wieland.games.screen.view.EndScreenView;
 import markus.wieland.games.screen.view.StartScreenView;
 import markus.wieland.minesweeper.configuration.MinesweeperConfiguration;
@@ -39,7 +38,6 @@ public class MainActivity extends GameActivity<MinesweeperConfiguration, Highsco
 
     @Override
     protected void initializeGame(MinesweeperGameState minesweeperGameState) {
-        endScreen.setScreenInteractListener(() -> restartActivity(true, MainActivity.class));
         game = new Minesweeper(minesweeperGameState, findViewById(R.id.activity_minesweeper_game_board), this);
         game.start();
     }
@@ -55,5 +53,13 @@ public class MainActivity extends GameActivity<MinesweeperConfiguration, Highsco
     public void onGameFinish(MinesweeperGameResult gameResult) {
         super.onGameFinish(gameResult);
         gameSaver.save((MinesweeperGameState) null);
+    }
+
+    public int getHeight() {
+        return findViewById(R.id.activity_minesweeper_game_board).findViewById(R.id.scrollView).getHeight();
+    }
+
+    public int getWidth() {
+        return findViewById(R.id.activity_minesweeper_game_board).findViewById(R.id.scrollView).getWidth();
     }
 }

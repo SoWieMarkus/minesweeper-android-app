@@ -77,35 +77,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/minesweeper_size_y"
-                android:textColor="@color/white" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <SeekBar
-                    android:id="@+id/minesweeper_start_screen_size_y"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:max="10"
-                    android:progress="3" />
-
-                <TextView
-                    android:id="@+id/minesweeper_start_screen_size_y_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
         </LinearLayout>
 
     </LinearLayout>

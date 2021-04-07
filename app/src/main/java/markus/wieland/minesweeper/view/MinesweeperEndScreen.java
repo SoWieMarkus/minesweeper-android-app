@@ -44,12 +44,11 @@ public class MinesweeperEndScreen extends EndScreenView {
 
     @Override
     protected void onBuild() {
-
         textViewScore = findViewById(R.id.minesweeper_end_screen_score);
         textViewResult = findViewById(R.id.minesweeper_end_screen_result);
 
-        findViewById(R.id.minesweeper_end_screen_play_again).setOnClickListener(view -> close());
-        findViewById(R.id.minesweeper_end_screen_back).setOnClickListener(view -> close());
-
+        findViewById(R.id.minesweeper_end_screen_play_again).setOnClickListener(view -> close(true));
+        findViewById(R.id.minesweeper_end_screen_back).setOnClickListener(view -> close(false));
     }
+
 }

@@ -3,7 +3,6 @@ package markus.wieland.minesweeper;
 import android.content.Context;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,6 @@ import androidx.annotation.Nullable;
 import markus.wieland.games.elements.Coordinate;
 import markus.wieland.games.elements.Matrix;
 import markus.wieland.games.elements.SerializableMatrix;
-import markus.wieland.games.game.GameResult;
 import markus.wieland.games.game.grid.GridGameBoardView;
 import markus.wieland.games.persistence.GameState;
 import markus.wieland.minesweeper.persistence.MinesweeperGameState;

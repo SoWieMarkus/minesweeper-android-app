@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.widget.GridView;
 
 public class MinesweeperView extends GridView {
+
     public MinesweeperView(Context context) {
         super(context);
     }

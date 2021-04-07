@@ -31,12 +31,6 @@ public class MinesweeperGridAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        //TODO implement new matrix.get(i) method
-        int j = 0;
-        for (MinesweeperCellView minesweeperCellView : matrix) {
-            if (j == i) return minesweeperCellView;
-            j++;
-        }
-        return null;
+        return matrix.get(i);
     }
 }

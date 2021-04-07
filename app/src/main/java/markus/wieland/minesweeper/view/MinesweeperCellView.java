@@ -3,13 +3,14 @@ package markus.wieland.minesweeper.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import markus.wieland.games.elements.Coordinate;
-import markus.wieland.games.game.GameBoardField;
 import markus.wieland.games.game.grid.GridGameBoardFieldView;
 import markus.wieland.games.game.view.GameStateField;
 import markus.wieland.minesweeper.R;
@@ -23,13 +24,28 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
     private boolean isMarkedAsSave;
     private boolean wasRevealed;
 
-    private final Coordinate coordinate;
+    private Coordinate coordinate;
 
     public static final int BOMB = -10;
 
     public MinesweeperCellView(Context context, Coordinate coordinate) {
         super(context);
         this.coordinate = coordinate;
+        this.wasRevealed = false;
+    }
+
+    public MinesweeperCellView(Context context) {
+        super(context);
+        this.wasRevealed = false;
+    }
+
+    public MinesweeperCellView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        this.wasRevealed = false;
+    }
+
+    public MinesweeperCellView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         this.wasRevealed = false;
     }
 
@@ -109,10 +125,9 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
         drawButton(canvas);
     }
 
-
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, widthMeasureSpec);
+    protected void onMeasure(int w, int h) {
+        super.onMeasure(w, w);
     }
 
     private void drawNumber(Canvas canvas, int number) {
