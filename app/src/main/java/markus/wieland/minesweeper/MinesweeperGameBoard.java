@@ -1,8 +1,10 @@
 package markus.wieland.minesweeper;
 
 import android.content.Context;
+import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,10 +19,13 @@ import markus.wieland.minesweeper.persistence.MinesweeperGameState;
 import markus.wieland.minesweeper.persistence.MinesweeperGameStateField;
 import markus.wieland.minesweeper.view.MinesweeperCellView;
 import markus.wieland.minesweeper.view.MinesweeperGridAdapter;
+import markus.wieland.minesweeper.view.MinesweeperView;
 
 public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView> {
 
-    private GridView minesweeperGridView;
+    private MinesweeperView minesweeperGridView;
+    private TextView textViewRemainingBombs;
+    private TextView textViewTime;
 
     public MinesweeperGameBoard(@NonNull Context context) {
         super(context);
@@ -37,6 +42,8 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
     @Override
     protected void initializeFields() {
         minesweeperGridView = findViewById(R.id.grid);
+        textViewRemainingBombs = findViewById(R.id.minesweeper_game_board_remaining_bombs);
+        textViewTime = findViewById(R.id.minesweeper_game_board_remaining_time);
     }
 
     @Override
@@ -77,6 +84,34 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
         for (MinesweeperCellView view : matrix) {
             if (!view.isUncovered()) view.reveal();
         }
+    }
+
+    public void updateTime(long seconds){
+        textViewTime.setText(DateUtils.formatElapsedTime(seconds));
+    }
+
+    public void updateRemainingBombs(){
+        int amountOfRemainingBombs = getAmountOfBombs() - getAmountOfMarkedFields();
+        if (amountOfRemainingBombs < 0) amountOfRemainingBombs = 0;
+        textViewRemainingBombs.setText(String.valueOf(amountOfRemainingBombs));
+    }
+
+    private int getAmountOfBombs(){
+        int amountOfBombs = 0;
+        for (MinesweeperCellView field : matrix) {
+            if (field.isBomb()) {
+                amountOfBombs++;
+            }
+        }return amountOfBombs;
+    }
+
+    private int getAmountOfMarkedFields(){
+        int amountOfMarkedFields = 0;
+        for (MinesweeperCellView field : matrix) {
+            if (field.isMarkedAsSave()) {
+                amountOfMarkedFields++;
+            }
+        }return amountOfMarkedFields;
     }
 
     public void uncover(Coordinate coordinate) {

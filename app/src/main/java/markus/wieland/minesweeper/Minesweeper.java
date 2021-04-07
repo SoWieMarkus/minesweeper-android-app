@@ -1,5 +1,7 @@
 package markus.wieland.minesweeper;
 
+import android.os.CountDownTimer;
+
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.game.Game;
 import markus.wieland.games.game.GameEventListener;
@@ -11,6 +13,7 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
     private final MinesweeperGameBoard minesweeperGameBoard;
     private long seconds;
     private final Difficulty difficulty;
+    private final CountDownTimer timer;
 
     public Minesweeper(MinesweeperGameState minesweeperGameState, MinesweeperGameBoard minesweeperGameBoard, GameEventListener<MinesweeperGameResult> gameEventListener) {
         super(gameEventListener);
@@ -19,6 +22,31 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
         this.seconds = minesweeperGameState.getSeconds();
         this.difficulty = minesweeperGameState.getDifficulty();
         minesweeperGameBoard.setGameBoardInteractionListener(this);
+        timer = new CountDownTimer(1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                seconds++;
+                minesweeperGameBoard.updateTime(seconds);
+                if (seconds >= 100 * 60 - 1) finish(new MinesweeperGameResult(seconds, false));
+            }
+
+            @Override
+            public void onFinish() {
+                this.start();
+            }
+        };
+    }
+
+    @Override
+    public void start() {
+        super.start();
+        timer.start();
+    }
+
+    @Override
+    public void finish(MinesweeperGameResult gameResult) {
+        super.finish(gameResult);
+        timer.cancel();
     }
 
     @Override
@@ -48,5 +76,6 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
     public void onLongClick(MinesweeperCellView minesweeperCellView) {
         if (minesweeperCellView.isUncovered()) return;
         minesweeperCellView.toggleMarkedAsSaved();
+        minesweeperGameBoard.updateRemainingBombs();
     }
 }

@@ -1,11 +1,0 @@
-
-W
-java:S1854z":Remove this useless assignment to local variable "height".(Ýนอม8ฮจþศ/
-V
-java:S1854y"9Remove this useless assignment to local variable "width".(ล‘๛ป8ฮจþศ/
-G
-java:S1481y"*Remove this unused "width" local variable.(ล‘๛ป8ฮจþศ/
-d
-java:S1128"GRemove this unused import 'java.util.concurrent.CancellationException'.(๔ฎ8๖ไ๛ย/
-H
-java:S1481z"+Remove this unused "height" local variable.(Ýนอม8ฮจþศ/

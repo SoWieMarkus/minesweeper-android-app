@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Minesweeper</string>
+    <string name="minesweeper_easy">Einfach</string>
+    <string name="minesweeper_medium">Mittel</string>
+    <string name="minesweeper_hard">Schwer</string>
+    <string name="minesweeper_size_x">Breite</string>
+    <string name="minesweeper_size_y">Höhe</string>
+    <string name="minesweeper_play_again">Erneut spielen</string>
+    <string name="minesweeper_back">Hauptmenü</string>
+    <string name="minesweeper_game_over">Verloren!</string>
+    <string name="minesweeper_win">Gewonnen!</string>
+</resources>

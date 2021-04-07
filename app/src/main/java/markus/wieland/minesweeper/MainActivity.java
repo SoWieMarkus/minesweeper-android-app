@@ -46,7 +46,7 @@ public class MainActivity extends GameActivity<MinesweeperConfiguration, Highsco
 
     @Override
     protected void onStop() {
-        if (gameSaver != null && game != null)
+        if (gameSaver != null && game != null && game.isRunning())
             gameSaver.save(game.getGameState());
         super.onStop();
     }

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Minesweeper</string>
+    <string name="minesweeper_title" translatable="false">Minesweeper</string>
+    <string name="minesweeper_easy">Easy</string>
+    <string name="minesweeper_medium">Medium</string>
+    <string name="minesweeper_hard">Hard</string>
+    <string name="minesweeper_size_x">Width</string>
+    <string name="minesweeper_size_y">Height</string>
+    <string name="minesweeper_play_again">Play again</string>
+    <string name="minesweeper_back">Back to main menu</string>
+    <string name="minesweeper_game_over">Game Over</string>
+    <string name="minesweeper_win">You won!</string>
+    <string name="minesweeper_score" translatable="false">Score</string>
+
 </resources>
