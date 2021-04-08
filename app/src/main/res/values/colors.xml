@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="background">#FFBBBBBB</color>
+
+    <color name="win">#EE4A9100</color>
+    <color name="lose">#DDFF0000</color>
+    <color name="start">#CC252525</color>
+    <color name="darkBackground">#1F1F1F</color>
 </resources>

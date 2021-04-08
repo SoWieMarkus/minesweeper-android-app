@@ -1,5 +1,9 @@
 package markus.wieland.minesweeper;
 
+import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
+
 import markus.wieland.games.GameActivity;
 import markus.wieland.games.game.GameConfiguration;
 import markus.wieland.games.game.Highscore;
@@ -22,6 +26,12 @@ public class MainActivity extends GameActivity<MinesweeperConfiguration, Highsco
     }
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     protected EndScreenView initializeEndScreen() {
         return findViewById(R.id.activity_minesweeper_end_screen);
     }
@@ -39,6 +49,7 @@ public class MainActivity extends GameActivity<MinesweeperConfiguration, Highsco
     @Override
     protected void initializeGame(MinesweeperGameState minesweeperGameState) {
         game = new Minesweeper(minesweeperGameState, findViewById(R.id.activity_minesweeper_game_board), this);
+        findViewById(R.id.activity_minesweeper_game_board).setVisibility(View.VISIBLE);
         game.start();
     }
 

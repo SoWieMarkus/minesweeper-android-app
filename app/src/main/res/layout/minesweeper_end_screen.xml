@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#D81B60">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,7 +68,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/minesweeper_play_again" />
+            android:text="@string/minesweeper_play_again"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/minesweeper_end_screen_back"
@@ -78,7 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/minesweeper_back" />
+            android:text="@string/minesweeper_back"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

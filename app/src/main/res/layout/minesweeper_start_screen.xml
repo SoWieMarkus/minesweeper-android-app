@@ -19,9 +19,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/syncopate"
             android:gravity="center"
             android:text="@string/minesweeper_title"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="36sp" />
 
         <LinearLayout
@@ -34,23 +35,27 @@
                 android:id="@+id/minesweeper_start_screen_easy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/minesweeper_easy" />
+                android:text="@string/minesweeper_easy"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/minesweeper_start_screen_medium"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/minesweeper_medium" />
+                android:text="@string/minesweeper_medium"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/minesweeper_start_screen_hard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/minesweeper_hard" />
+                android:text="@string/minesweeper_hard"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="@string/minesweeper_size_x"
                 android:textColor="@color/white" />
 

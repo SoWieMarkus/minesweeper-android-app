@@ -34,8 +34,8 @@ public class MinesweeperEndScreen extends EndScreenView {
     protected void onNewGameResult() {
         MinesweeperGameResult minesweeperGameResult = (MinesweeperGameResult) gameResult;
         setBackgroundColor(minesweeperGameResult.isWin()
-                ? Color.parseColor("#BFFF0000")
-                : Color.parseColor("#BF00CC00"));
+                ? getContext().getColor(R.color.win)
+                : getContext().getColor(R.color.lose));
         textViewScore.setText(DateUtils.formatElapsedTime(minesweeperGameResult.getSeconds()));
         textViewResult.setText(minesweeperGameResult.isWin()
                 ? getContext().getString(R.string.minesweeper_win)

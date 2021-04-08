@@ -29,3 +29,9 @@ Xapp/src/main/java/markus/wieland/minesweeper/configuration/MinesweeperConfigura
 Mapp/src/main/java/markus/wieland/minesweeper/view/MinesweeperStartScreen.java,7\b\7b1d70b61595d5c4d2ff30723d9972c18136f4a4
 z
 Japp/src/main/java/markus/wieland/minesweeper/view/MinesweeperCellView.java,d\3\d36e3d6e8b7513a984013591bc85683af6c2e9d1
+Œ
+\app/src/main/java/markus/wieland/minesweeper/persistence/MinesweeperConfigurationCookie.java,b\2\b275f4ec7a7f9f3cfd41e7190330a75a83d2ca4b
+v
+Fapp/src/main/java/markus/wieland/minesweeper/view/MinesweeperView.java,8\e\8e2d06785e0ac00e46f5885e385f912acb5e04de
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

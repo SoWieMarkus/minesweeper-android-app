@@ -1,12 +1,16 @@
 package markus.wieland.minesweeper.view;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.screen.view.StartScreenView;
@@ -87,6 +91,12 @@ public class MinesweeperStartScreen extends StartScreenView implements SeekBar.O
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
         // No use for us
+    }
+
+    @Override
+    protected void onShow() {
+        super.onShow();
+        setBackgroundColor(getContext().getColor(R.color.start));
     }
 
     private int calculatePerfectSetup() {
