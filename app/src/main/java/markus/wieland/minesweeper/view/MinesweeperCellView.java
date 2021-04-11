@@ -14,7 +14,6 @@ import androidx.core.content.ContextCompat;
 import markus.wieland.games.elements.Coordinate;
 import markus.wieland.games.game.grid.GridGameBoardFieldView;
 import markus.wieland.games.game.view.GameStateField;
-import markus.wieland.minesweeper.R;
 import markus.wieland.minesweeper.persistence.MinesweeperGameStateField;
 
 public class MinesweeperCellView extends View implements GridGameBoardFieldView {
@@ -96,7 +95,9 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
     }
 
     @Override
-    public void update(){}
+    public void update() {
+        // is done by onDraw
+    }
 
     public void toggleMarkedAsSaved() {
         this.isMarkedAsSave = !isMarkedAsSave;
@@ -134,7 +135,7 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
         drawButton(canvas);
     }
 
-    private boolean isDarkThemeOn (){
+    private boolean isDarkThemeOn() {
         return (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
     }
 
@@ -163,7 +164,7 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
         draw(fileName, canvas);
     }
 
-    private String getFileEnding(){
+    private String getFileEnding() {
         return isDarkThemeOn() ? "_night" : "_light";
     }
 

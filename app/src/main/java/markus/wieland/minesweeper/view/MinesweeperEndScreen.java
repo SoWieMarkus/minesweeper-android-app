@@ -1,7 +1,6 @@
 package markus.wieland.minesweeper.view;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
