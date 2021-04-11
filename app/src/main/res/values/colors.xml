@@ -15,4 +15,7 @@
     <color name="lose">#DDFF0000</color>
     <color name="start">#CC252525</color>
     <color name="darkBackground">#1F1F1F</color>
+
+    <color name="refresh_night">#7CB342</color>
+    <color name="refresh_light">#1F1F1F</color>
 </resources>

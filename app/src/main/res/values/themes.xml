@@ -13,6 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="backgroundColorMain">@color/background_light</item>
+        <item name="refreshColor">@color/refresh_light</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

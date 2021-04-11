@@ -3,6 +3,8 @@ package markus.wieland.minesweeper;
 import android.content.Context;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,6 +29,7 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
     private TextView textViewRemainingBombs;
     private TextView textViewTime;
 
+
     public MinesweeperGameBoard(@NonNull Context context) {
         super(context);
     }
@@ -44,6 +47,7 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
         minesweeperGridView = findViewById(R.id.grid);
         textViewRemainingBombs = findViewById(R.id.minesweeper_game_board_remaining_bombs);
         textViewTime = findViewById(R.id.minesweeper_game_board_remaining_time);
+        findViewById(R.id.minesweeper_game_board_abort).setOnClickListener(view -> ((MinesweeperGameBoardFieldInteractionListener) gameBoardInteractionListener).onAbort());
     }
 
     @Override
@@ -66,14 +70,14 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
         return null;
     }
 
-    public boolean checkForWin(){
+    public boolean checkForWin() {
         for (MinesweeperCellView view : matrix) {
             if (!view.isUncovered() && !view.isBomb()) return false;
         }
         return true;
     }
 
-    public boolean checkForLose(){
+    public boolean checkForLose() {
         for (MinesweeperCellView view : matrix) {
             if (view.isUncovered() && view.isBomb()) return true;
         }
@@ -86,32 +90,34 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
         }
     }
 
-    public void updateTime(long seconds){
+    public void updateTime(long seconds) {
         textViewTime.setText(DateUtils.formatElapsedTime(seconds));
     }
 
-    public void updateRemainingBombs(){
+    public void updateRemainingBombs() {
         int amountOfRemainingBombs = getAmountOfBombs() - getAmountOfMarkedFields();
         if (amountOfRemainingBombs < 0) amountOfRemainingBombs = 0;
-        textViewRemainingBombs.setText(String.format(Locale.getDefault(),"%03d", amountOfRemainingBombs));
+        textViewRemainingBombs.setText(String.format(Locale.getDefault(), "%03d", amountOfRemainingBombs));
     }
 
-    private int getAmountOfBombs(){
+    private int getAmountOfBombs() {
         int amountOfBombs = 0;
         for (MinesweeperCellView field : matrix) {
             if (field.isBomb()) {
                 amountOfBombs++;
             }
-        }return amountOfBombs;
+        }
+        return amountOfBombs;
     }
 
-    private int getAmountOfMarkedFields(){
+    private int getAmountOfMarkedFields() {
         int amountOfMarkedFields = 0;
         for (MinesweeperCellView field : matrix) {
             if (field.isMarkedAsSave()) {
                 amountOfMarkedFields++;
             }
-        }return amountOfMarkedFields;
+        }
+        return amountOfMarkedFields;
     }
 
     public void uncover(Coordinate coordinate) {

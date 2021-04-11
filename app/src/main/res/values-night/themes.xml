@@ -15,5 +15,6 @@
         <!-- Customize your theme here. -->
 
         <item name="backgroundColorMain">@color/background_night</item>
+        <item name="refreshColor">@color/refresh_night</item>
     </style>
 </resources>

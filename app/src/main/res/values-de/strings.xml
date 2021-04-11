@@ -10,4 +10,9 @@
     <string name="minesweeper_back">Hauptmenü</string>
     <string name="minesweeper_game_over">Verloren!</string>
     <string name="minesweeper_win">Gewonnen!</string>
+    <string name="minesweeper_abort_game_title">Spiel abbrechen</string>
+    <string name="minesweeper_abort_game_message">Möchtest du das Spiel wirklich abbrechen? Der Spielstand geht verloren.</string>
+    <string name="minesweeper_abort_game_cancel">Abbrechen</string>
+    <string name="minesweeper_game_abort_confirm">Bestätigen</string>
+
 </resources>

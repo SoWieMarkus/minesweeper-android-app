@@ -12,4 +12,10 @@
     <string name="minesweeper_win">You won!</string>
     <string name="minesweeper_score" translatable="false">Score</string>
 
+
+    <string name="minesweeper_abort_game_title">Abort game</string>
+    <string name="minesweeper_abort_game_message">Are you sure you want to quit this game? The score will be deleted.</string>
+    <string name="minesweeper_abort_game_cancel">Cancel</string>
+    <string name="minesweeper_game_abort_confirm">Confirm</string>
+
 </resources>

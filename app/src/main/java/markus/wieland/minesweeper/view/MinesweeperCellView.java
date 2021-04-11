@@ -63,6 +63,11 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
     }
 
     @Override
+    public GameStateField getGameStateField() {
+        return null;
+    }
+
+    @Override
     public Coordinate getCoordinate() {
         return coordinate;
     }
@@ -89,6 +94,9 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
         this.wasRevealed = true;
         invalidate();
     }
+
+    @Override
+    public void update(){}
 
     public void toggleMarkedAsSaved() {
         this.isMarkedAsSave = !isMarkedAsSave;

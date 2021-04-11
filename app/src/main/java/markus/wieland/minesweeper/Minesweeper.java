@@ -1,7 +1,9 @@
 package markus.wieland.minesweeper;
 
+import android.content.Context;
 import android.os.CountDownTimer;
 
+import markus.wieland.games.ConfirmDialog;
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.game.Game;
 import markus.wieland.games.game.GameEventListener;
@@ -82,6 +84,12 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
 
     @Override
     public void onAbort() {
-
+        Context context = minesweeperGameBoard.getContext();
+        ConfirmDialog confirmDialog = new ConfirmDialog(
+                context.getString(R.string.minesweeper_abort_game_title),
+                context.getString(R.string.minesweeper_abort_game_message),
+                context.getString(R.string.minesweeper_game_abort_confirm),
+                context.getString(R.string.minesweeper_abort_game_cancel));
+        gameEventListener.onAbort(confirmDialog);
     }
 }
