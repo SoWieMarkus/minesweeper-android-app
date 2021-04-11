@@ -1,6 +1,7 @@
 package markus.wieland.minesweeper.view;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -125,29 +126,42 @@ public class MinesweeperCellView extends View implements GridGameBoardFieldView 
         drawButton(canvas);
     }
 
+    private boolean isDarkThemeOn (){
+        return (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+    }
+
     @Override
     protected void onMeasure(int w, int h) {
         super.onMeasure(w, w);
     }
 
     private void drawNumber(Canvas canvas, int number) {
-        draw("number_" + number, canvas);
+        String fileName = "minesweeper_" + number + "" + getFileEnding();
+        draw(fileName, canvas);
     }
 
     private void drawNormalBomb(Canvas canvas) {
-        draw(R.drawable.bomb_normal, canvas);
+        String fileName = "bomb" + getFileEnding();
+        draw(fileName, canvas);
     }
 
     private void drawBomb(Canvas canvas) {
-        draw(R.drawable.bomb_exploded, canvas);
+        String fileName = "bomb_exploded" + getFileEnding();
+        draw(fileName, canvas);
     }
 
     private void drawButton(Canvas canvas) {
-        draw(R.drawable.button, canvas);
+        String fileName = "button" + getFileEnding();
+        draw(fileName, canvas);
+    }
+
+    private String getFileEnding(){
+        return isDarkThemeOn() ? "_night" : "_light";
     }
 
     private void drawFlag(Canvas canvas) {
-        draw(R.drawable.flag, canvas);
+        String fileName = "flag" + getFileEnding();
+        draw(fileName, canvas);
     }
 
     private void draw(@DrawableRes int drawableRes, Canvas canvas) {

@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.Locale;
+
 import markus.wieland.games.elements.Coordinate;
 import markus.wieland.games.elements.Matrix;
 import markus.wieland.games.elements.SerializableMatrix;
@@ -91,7 +93,7 @@ public class MinesweeperGameBoard extends GridGameBoardView<MinesweeperCellView>
     public void updateRemainingBombs(){
         int amountOfRemainingBombs = getAmountOfBombs() - getAmountOfMarkedFields();
         if (amountOfRemainingBombs < 0) amountOfRemainingBombs = 0;
-        textViewRemainingBombs.setText(String.valueOf(amountOfRemainingBombs));
+        textViewRemainingBombs.setText(String.format(Locale.getDefault(),"%03d", amountOfRemainingBombs));
     }
 
     private int getAmountOfBombs(){

@@ -29,7 +29,6 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
             public void onTick(long millisUntilFinished) {
                 seconds++;
                 minesweeperGameBoard.updateTime(seconds);
-                if (seconds >= 100 * 60 - 1) finish(new MinesweeperGameResult(seconds, false));
             }
 
             @Override
@@ -79,5 +78,10 @@ public class Minesweeper extends Game<MinesweeperGameState, MinesweeperGameResul
         if (minesweeperCellView.isUncovered()) return;
         minesweeperCellView.toggleMarkedAsSaved();
         minesweeperGameBoard.updateRemainingBombs();
+    }
+
+    @Override
+    public void onAbort() {
+
     }
 }

@@ -9,4 +9,6 @@ public interface MinesweeperGameBoardFieldInteractionListener extends GameBoardI
 
     void onLongClick(MinesweeperCellView minesweeperCellView);
 
+    void onAbort();
+
 }
