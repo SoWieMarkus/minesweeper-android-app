@@ -12,6 +12,6 @@ Minesweeper game which uses my <a href="https://github.com/SoWieMarkus/Games">An
 
 ## Screenshots
 
-<img src="https://github.com/SoWieMarkus/Sudoku/blob/main/screenshots/english/Screenshot_20210409-225115_Sudoku.jpg" width="25%"><img src="https://github.com/SoWieMarkus/Sudoku/blob/main/screenshots/english/Screenshot_20210409-225127_Sudoku.jpg" width="25%"><img src="https://github.com/SoWieMarkus/Sudoku/blob/main/screenshots/english/Screenshot_20210409-225140_Sudoku.jpg" width="25%"><img src="https://github.com/SoWieMarkus/Sudoku/blob/main/screenshots/english/Screenshot_20210409-225148_Sudoku.jpg" width="25%">
+<img src="https://github.com/SoWieMarkus/Minesweeper/blob/main/screenshots/Screenshot_20210411-214532_Minesweeper.jpg" width="33%"><img src="https://github.com/SoWieMarkus/Minesweeper/blob/main/screenshots/Screenshot_20210411-214450_Minesweeper.jpg" width="33%"><img src="https://github.com/SoWieMarkus/Minesweeper/blob/main/screenshots/Screenshot_20210411-214459_Minesweeper.jpg" width="33%">
 
 
