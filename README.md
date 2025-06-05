@@ -1,9 +1,5 @@
 # Minesweeper
-Minesweeper game which uses my <a href="https://github.com/SoWieMarkus/Games">Android Games Library</a>.
-
-<a href="https://play.google.com/store/apps/details?id=markus.wieland.minesweeper">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Build status" width="50%">
- </a>
+Minesweeper game which uses my <a href="https://github.com/SoWieMarkus/android-games-package">android-games-package</a>.
 
 * The user can choose between three different difficulties. 
 * The user can change the size of the grid. (Only the fields per row, the app will calculate the optimal number of fields per column)
