@@ -1,5 +1,5 @@
 # Minesweeper
-Minesweeper game which uses my <a href="https://github.com/SoWieMarkus/android-games-package">android-games-package</a>.
+Minesweeper game which uses my <a href="https://github.com/SoWieMarkus/android-game-package">android-game-package</a>.
 
 * The user can choose between three different difficulties. 
 * The user can change the size of the grid. (Only the fields per row, the app will calculate the optimal number of fields per column)
